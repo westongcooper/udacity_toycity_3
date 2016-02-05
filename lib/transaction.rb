@@ -22,7 +22,7 @@ class Transaction
 
   def process_transaction
     raise OutOfStockError.new(@product) unless @product.in_stock?
-    @product.decreate_stock
+    @product.decrease_stock
     @@all << self
   rescue OutOfStockError => e
     p e

@@ -44,7 +44,7 @@ class Product
     self.stock > 0
   end
 
-  def decreate_stock
+  def decrease_stock
     self.stock -= 1
   end
 end
