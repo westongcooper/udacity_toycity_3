@@ -1,0 +1,48 @@
+commit 5438841958836eb5c4a584a0eee9b745d03cf59e
+Author: Weston Cooper <weston@westoncooper.com>
+Date:   Fri Feb 5 15:50:04 2016 -0500
+
+    handle out of stock errors
+
+commit 3e57c9d715fcd78e0af6d829e2d6f185879630a3
+Author: Weston Cooper <weston@westoncooper.com>
+Date:   Fri Feb 5 15:28:17 2016 -0500
+
+    tally transactions
+
+commit d32239117c7a45341d8c3f4f9d5e790dd4707041
+Author: Weston Cooper <weston@westoncooper.com>
+Date:   Fri Feb 5 15:23:11 2016 -0500
+
+    create Transaction class
+
+commit 77c5baf27e75d9c266b05aa246ab3d386fdf5261
+Author: Weston Cooper <weston@westoncooper.com>
+Date:   Fri Feb 5 15:19:58 2016 -0500
+
+    handle duplicate customers
+
+commit 0611f4f4f099085a5c6876f330e7750d787b305e
+Author: Weston Cooper <weston@westoncooper.com>
+Date:   Fri Feb 5 15:13:29 2016 -0500
+
+    Added Customer Class
+
+commit 860586e52a7d6671e51f973ad8a8f3cb11ae8a57
+Author: Weston Cooper <weston@westoncooper.com>
+Date:   Fri Feb 5 15:07:15 2016 -0500
+
+    check stock
+
+commit 3719c494121ad301ae5f62c3972c6f0f447c3ecd
+Author: Weston Cooper <weston@westoncooper.com>
+Date:   Fri Feb 5 15:05:47 2016 -0500
+
+    handle duplication error
+
+commit 62150cea82ef1bfd9d8985f9e96851dbe6555f1d
+Author: Weston Cooper <weston@westoncooper.com>
+Date:   Fri Feb 5 14:50:29 2016 -0500
+
+    Product Class Created
+    Tally all instances
