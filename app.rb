@@ -64,3 +64,14 @@ puts transaction2.product == nanoblock # Should return true
 
 walter.purchase(firehouse)
 # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
+
+walter.purchase(nanoblock, 50)
+
+puts "\n#{walter.name}'s purchases:"
+p walter.all_purchases
+
+puts "\n#{nanoblock.title}'s sales:"
+p nanoblock.all_transactions
+nanoblock_revenue = nanoblock.product_revenue
+puts
+puts "#{nanoblock.title}'s revenue: $#{nanoblock_revenue.round(2)}"

@@ -1,11 +1,12 @@
 class Transaction
-  attr_accessor :product, :customer, :id
+  attr_accessor :product, :customer, :id, :sales_price
   @@total_transactions = 1
   @@all = []
 
-  def initialize customer, product
+  def initialize customer, product, sales_price=nil
     @customer = customer
     @product = product
+    @sales_price = sales_price || product.price
     @id = @@total_transactions
     @@total_transactions += 1
     process_transaction

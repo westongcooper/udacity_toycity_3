@@ -1,0 +1,3 @@
+I included the ability to list out all the transactions for each product and all purchases for each customer.
+
+I also added the ability to specify the sale price of each trascation and calculate the total revenue of each product.

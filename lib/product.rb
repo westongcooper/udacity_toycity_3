@@ -21,6 +21,14 @@ class Product
     @@all.select{ |product| product.in_stock? }
   end
 
+  def all_transactions
+    Transaction.all.select{ |transaction| transaction.product == self }
+  end
+
+  def product_revenue
+    all_transactions.reduce(0) { |sum, transaction| sum += transaction.sales_price }
+  end
+
   def add_to_inventory
     raise DuplicateProductError.new(self) if current_inventory?
     @@all << self
