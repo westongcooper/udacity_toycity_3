@@ -6,11 +6,26 @@ class Product
     @title = product[:title]
     @price = product[:price]
     @stock = product[:stock]
-    @@all << product
+    add_to_inventory(product)
   end
 
   def self.all
     @@all
+  end
+
+  def self.find_by_title(title)
+    @@all.select{ |product| product.title == title }.first
+  end
+
+  def add_to_inventory product
+    raise DuplicateProductError.new(product) if current_inventory?
+    @@all << self
+  rescue DuplicateProductError => e
+    puts e
+  end
+
+  def current_inventory?
+    !!self.class.find_by_title(@title)
   end
 
 end
