@@ -4,7 +4,7 @@ class Customer
 
   def initialize customer
     @name = customer[:name]
-    add_to_customer_database(customer)
+    add_to_customer_database
   end
 
   def self.all
@@ -15,8 +15,8 @@ class Customer
     @@all.select{ |customer| customer.name == name }.first
   end
 
-  def add_to_customer_database customer
-    raise DuplicateCustomerError.new(customer) if current_customer?
+  def add_to_customer_database
+    raise DuplicateCustomerError.new(self) if current_customer?
     @@all << self
   rescue DuplicateCustomerError => e
     p e
@@ -26,4 +26,7 @@ class Customer
     !!self.class.find_by_name(@name)
   end
 
+  def purchase product
+    Transaction.new(self, product)
+  end
 end

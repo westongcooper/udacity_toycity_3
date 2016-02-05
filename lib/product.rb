@@ -6,7 +6,7 @@ class Product
     @title = product[:title]
     @price = product[:price]
     @stock = product[:stock]
-    add_to_inventory(product)
+    add_to_inventory
   end
 
   def self.all
@@ -21,8 +21,8 @@ class Product
     @@all.select{ |product| product.in_stock? }
   end
 
-  def add_to_inventory product
-    raise DuplicateProductError.new(product) if current_inventory?
+  def add_to_inventory
+    raise DuplicateProductError.new(self) if current_inventory?
     @@all << self
   rescue DuplicateProductError => e
     p e
@@ -34,5 +34,9 @@ class Product
 
   def in_stock?
     self.stock > 0
+  end
+
+  def decreate_stock
+    self.stock -= 1
   end
 end

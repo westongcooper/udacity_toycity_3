@@ -1,25 +1,24 @@
-class DuplicateProductError < StandardError
-  attr_accessor :product
-
-  def initialize(product)
-    @product = product
+class ToyCityError < StandardError
+  attr_accessor :item
+  def initialize(item)
+    @item = item
     super(message)
   end
-
+end
+class DuplicateProductError < ToyCityError
   def message
-    "'#{@product[:title]}' already exist"
+    "'#{@item.title}' already exist."
   end
 end
 
-class DuplicateCustomerError < StandardError
-  attr_accessor :customer
-
-  def initialize(customer)
-    @customer = customer
-    super(message)
-  end
-
+class DuplicateCustomerError < ToyCityError
   def message
-    "'#{@customer[:name]}' already exist"
+    "'#{@item.name}' already exist."
+  end
+end
+
+class OutOfStockError < ToyCityError
+  def message
+    "'#{@item.title}' is out of stock."
   end
 end
