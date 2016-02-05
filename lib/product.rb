@@ -25,7 +25,7 @@ class Product
     raise DuplicateProductError.new(product) if current_inventory?
     @@all << self
   rescue DuplicateProductError => e
-    puts e
+    p e
   end
 
   def current_inventory?
