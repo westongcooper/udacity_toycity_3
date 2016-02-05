@@ -17,6 +17,10 @@ class Product
     @@all.select{ |product| product.title == title }.first
   end
 
+  def self.in_stock
+    @@all.select{ |product| product.in_stock? }
+  end
+
   def add_to_inventory product
     raise DuplicateProductError.new(product) if current_inventory?
     @@all << self
@@ -28,4 +32,7 @@ class Product
     !!self.class.find_by_title(@title)
   end
 
+  def in_stock?
+    self.stock > 0
+  end
 end
